@@ -1,0 +1,6 @@
+ecr_repo_name = "rstudio_repo"
+ecs_cluster_name = "rstudio_cluster"
+slack_channel_email_address = "xxxxxx@gmail.com"
+task_name = "rstudio_task"
+cloudwatch_schedule_expression = "cron(0 24 ? * MON-FRI *)"
+image_tag = "latest"
