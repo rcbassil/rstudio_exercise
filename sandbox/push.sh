@@ -19,7 +19,10 @@ profile="$3"
 region="$(echo "$repository_url" | cut -d. -f4)"
 image_name="$(echo "$repository_url" | cut -d/ -f2)"
 
-aws ecr get-login-password --region "$region" --profile personal | docker login --username AWS --password-stdin "$repository_url"
+docker build --platform=linux/amd64 -t "$image_name" .
+
+
+aws ecr get-login-password --region "$region" --profile "$profile" | docker login --username AWS --password-stdin "$repository_url"
 
 docker tag "$image_name" "$repository_url":"$tag"
 docker push "$repository_url":"$tag"
