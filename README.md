@@ -5,4 +5,12 @@ In this exercise I use ECS, CloudWatch, IAM, and SNS resources. The module cron-
 By default, the module spins up a new ECS cluster with the same name as your scheduled job. It also uses ECS with Fargate. 
 Cloudwatch is used to trigger a job and also to send a message to a SNS topic in case the job fails.
 
-Dockerfile is used to create a sample application/image which will be pushed to the ECR repository using push.sh. 
+Dockerfile is used to create a sample application/image which will be pushed to the ECR repository using push.sh
+
+ To create the resources in AWS we will use terraform. This exercise assumes you have initialized your project directory with:
+
+	terraform init
+
+ To create the resources in AWS:
+
+	terraform apply
